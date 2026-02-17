@@ -1,2 +1,35 @@
-app:
-  name: Server Configuration Dev App updated
+# ===================================================================
+# Config Server — Dev profile secrets for springCloudPrototype
+# File: config-server/src/main/resources/config/springCloudPrototype-dev.yml
+#
+# Served to your app when:
+#   spring.application.name=springCloudPrototype AND profile=dev
+#
+# These values OVERRIDE both:
+#   - config/application.yml (shared)
+#   - config/springCloudPrototype.yml (service base)
+#   - your local application-dev.yml fallback values
+#
+# ⚠️  SECURITY: In production, back your Config Server with a private
+#     Git repository or HashiCorp Vault instead of the local filesystem.
+#     Never commit real production secrets to a public repo.
+# ===================================================================
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springCloudPrototype
+    username: postgres
+    password: admin   # ← moved here from application-dev.yml
+
+  liquibase:
+    contexts: dev, faker
+
+jhipster:
+  security:
+    authentication:
+      jwt:
+        # Dev JWT secret — different from prod intentionally.
+        # Rotate this regularly even in dev to build good habits.
+        base64-secret: NTNhZTkwZDA0YzljYzk5N2YyMGY5MzEyOThiNTUxMjMxM2MwNTBkMWIzZDk4NmYxMjMyZGI5MTFmZTg3NGY2YjM3ZGYwMmYwNjY2OTEzZTQ2NGNjMjFjZjRiZjMwOWI4ZDNhNWU0NWRjNTI3OGQyYzU4YTJkY2IxMjRhZjA0MmE=
+        token-validity-in-seconds: 86400
+        token-validity-in-seconds-for-remember-me: 2592000
