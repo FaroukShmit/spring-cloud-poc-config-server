@@ -1,19 +1,5 @@
-# ===================================================================
-# Config Server — Dev profile secrets for springCloudPrototype
-# File: config-server/src/main/resources/config/springCloudPrototype-dev.yml
-#
-# Served to your app when:
-#   spring.application.name=springCloudPrototype AND profile=dev
-#
-# These values OVERRIDE both:
-#   - config/application.yml (shared)
-#   - config/springCloudPrototype.yml (service base)
-#   - your local application-dev.yml fallback values
-#
-# ⚠️  SECURITY: In production, back your Config Server with a private
-#     Git repository or HashiCorp Vault instead of the local filesystem.
-#     Never commit real production secrets to a public repo.
-# ===================================================================
+app:
+  name: DEV-springCloudPrototype
 
 spring:
   datasource:
