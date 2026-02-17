@@ -1,21 +1,5 @@
-# ===================================================================
-# Config Server — Prod profile secrets for springCloudPrototype
-# File: config-server/src/main/resources/config/springCloudPrototype-prod.yml
-#
-# Served to your app when:
-#   spring.application.name=springCloudPrototype AND profile=prod
-#
-# ⚠️  REAL PRODUCTION CHECKLIST:
-#   □ Move this file to a PRIVATE Git repository
-#   □ Or use HashiCorp Vault as the Config Server backend
-#   □ Set DB password via environment variable: ${DB_PASSWORD}
-#   □ Set JWT secret via environment variable: ${JWT_SECRET}
-#   □ Never hardcode production secrets in any file tracked by Git
-#
-# Example with environment variables (recommended for prod):
-#   password: ${DB_PASSWORD}
-#   base64-secret: ${JWT_SECRET}
-# ===================================================================
+app:
+  name: springCloudPrototype
 
 spring:
   datasource:
