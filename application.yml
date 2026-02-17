@@ -1,2 +1,42 @@
-app:
-  name: Server Configuration App
+# ===================================================================
+# Config Server — Prod profile secrets for springCloudPrototype
+# File: config-server/src/main/resources/config/springCloudPrototype-prod.yml
+#
+# Served to your app when:
+#   spring.application.name=springCloudPrototype AND profile=prod
+#
+# ⚠️  REAL PRODUCTION CHECKLIST:
+#   □ Move this file to a PRIVATE Git repository
+#   □ Or use HashiCorp Vault as the Config Server backend
+#   □ Set DB password via environment variable: ${DB_PASSWORD}
+#   □ Set JWT secret via environment variable: ${JWT_SECRET}
+#   □ Never hardcode production secrets in any file tracked by Git
+#
+# Example with environment variables (recommended for prod):
+#   password: ${DB_PASSWORD}
+#   base64-secret: ${JWT_SECRET}
+# ===================================================================
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springCloudPrototype
+    username: springCloudPrototype
+    # ↓ Replace with your real password or use environment variable:
+    # password: ${DB_PASSWORD}
+    password: your-prod-password-here
+
+  liquibase:
+    contexts: prod
+
+jhipster:
+  security:
+    authentication:
+      jwt:
+        # ↓ Replace with your real secret or use environment variable:
+        # base64-secret: ${JWT_SECRET}
+        # Generate a new one: openssl rand -base64 64
+        base64-secret: NTNhZTkwZDA0YzljYzk5N2YyMGY5MzEyOThiNTUxMjMxM2MwNTBkMWIzZDk4NmYxMjMyZGI5MTFmZTg3NGY2YjM3ZGYwMmYwNjY2OTEzZTQ2NGNjMjFjZjRiZjMwOWI4ZDNhNWU0NWRjNTI3OGQyYzU4YTJkY2IxMjRhZjA0MmE=
+        token-validity-in-seconds: 86400
+        token-validity-in-seconds-for-remember-me: 2592000
+  mail:
+    base-url: http://my-server-url-to-change
