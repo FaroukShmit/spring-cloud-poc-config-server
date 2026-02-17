@@ -1,0 +1,30 @@
+app:
+  name: springCloudPrototype
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springCloudPrototype
+    username: springCloudPrototype
+    # ↓ Replace with your real password or use environment variable:
+    # password: ${DB_PASSWORD}
+    password: your-prod-password-here
+
+  liquibase:
+    contexts: prod
+
+jhipster:
+  security:
+    authentication:
+      jwt:
+        # ↓ Replace with your real secret or use environment variable:
+        # base64-secret: ${JWT_SECRET}
+        # Generate a new one: openssl rand -base64 64
+        base64-secret: NTNhZTkwZDA0YzljYzk5N2YyMGY5MzEyOThiNTUxMjMxM2MwNTBkMWIzZDk4NmYxMjMyZGI5MTFmZTg3NGY2YjM3ZGYwMmYwNjY2OTEzZTQ2NGNjMjFjZjRiZjMwOWI4ZDNhNWU0NWRjNTI3OGQyYzU4YTJkY2IxMjRhZjA0MmE=
+        token-validity-in-seconds: 86400
+        token-validity-in-seconds-for-remember-me: 2592000
+  mail:
+    base-url: http://my-server-url-to-change
+
+
+application:
+ version: 45
