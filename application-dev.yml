@@ -19,3 +19,7 @@ jhipster:
         base64-secret: NTNhZTkwZDA0YzljYzk5N2YyMGY5MzEyOThiNTUxMjMxM2MwNTBkMWIzZDk4NmYxMjMyZGI5MTFmZTg3NGY2YjM3ZGYwMmYwNjY2OTEzZTQ2NGNjMjFjZjRiZjMwOWI4ZDNhNWU0NWRjNTI3OGQyYzU4YTJkY2IxMjRhZjA0MmE=
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
+
+
+application:
+ version: 44
