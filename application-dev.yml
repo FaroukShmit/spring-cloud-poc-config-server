@@ -23,4 +23,4 @@ jhipster:
 
 application:
   version: 0.2
-  name: springCloudPrototype
+  name: Micro-Services Based Arch With Cloud
