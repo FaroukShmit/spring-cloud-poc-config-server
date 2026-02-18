@@ -22,4 +22,5 @@ jhipster:
 
 
 application:
- version: 44
+  version: 0.2
+  name: springCloudPrototype
