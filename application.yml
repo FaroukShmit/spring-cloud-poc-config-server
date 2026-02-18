@@ -24,4 +24,5 @@ jhipster:
     base-url: http://my-server-url-to-change
 
 application:
-  version: 30
+  version: 0.1
+  name: springCloudPrototype
